@@ -33,8 +33,8 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
  * Each line consists of: <source id> <target id>
  * This format reads the src and trg ids and adds a zero weight on the edge
  */
-public class LongDoubleZerosTextEdgeInputFormat extends
-    TextEdgeInputFormat<LongWritable, DoubleWritable> {
+public class LongDoubleZerosTextEdgeInputFormat extends 
+    TextEdgeInputFormat<LongWritable, DoubleWritable>  implements TextFormatForEdgeInput {
   /** Splitter for endpoints */
   private static final Pattern SEPARATOR = Pattern.compile("[\t ]");
 
@@ -73,4 +73,10 @@ public class LongDoubleZerosTextEdgeInputFormat extends
       return new DoubleWritable(0.0);
     }
   }
+
+@Override
+public void Edgeinputformat() {
+	// TODO Auto-generated method stub
+	
+}
 }

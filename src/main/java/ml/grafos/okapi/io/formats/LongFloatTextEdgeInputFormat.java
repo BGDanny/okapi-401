@@ -33,7 +33,7 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
  * Each line consists of: <src id> <target id> <edge weight>
  */
 public class LongFloatTextEdgeInputFormat extends
-    TextEdgeInputFormat<LongWritable, FloatWritable> {
+    TextEdgeInputFormat<LongWritable, FloatWritable>  implements TextFormatForEdgeInput {
   /** Splitter for endpoints */
   private static final Pattern SEPARATOR = Pattern.compile("[\t ]");
 
@@ -72,4 +72,10 @@ public class LongFloatTextEdgeInputFormat extends
       return new FloatWritable(Float.parseFloat(tokens[2]));
     }
   }
+
+@Override
+public void Edgeinputformat() {
+	// TODO Auto-generated method stub
+	
+}
 }
