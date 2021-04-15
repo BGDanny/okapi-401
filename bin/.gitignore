@@ -1,2 +1,14 @@
-ml-10m.zip
-ratings.dat
+target
+.settings
+.classpath
+.idea
+.project
+graphlib.iml
+/.DS_Store
+/.gitignore
+/CHANGES.md
+/LICENSE.txt
+/README.md
+/license-header.txt
+/pom.xml
+/src/
