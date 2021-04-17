@@ -38,7 +38,7 @@ import java.io.IOException;
 @SuppressWarnings("rawtypes")
 public class EdgesWithValuesVertexOutputFormat<I extends WritableComparable,
     V extends Writable, E extends Writable>
-    extends TextVertexOutputFormat<I, V, E> {
+    extends TextVertexOutputFormat<I, V, E> implements TextFormatForEdgeInputOutput{
   /** Split delimiter */
   public static final String LINE_TOKENIZE_VALUE = "output.delimiter";
   /** Default split delimiter */
@@ -81,5 +81,11 @@ public class EdgesWithValuesVertexOutputFormat<I extends WritableComparable,
       return new Text(sb.toString());
     }
   }
+
+@Override
+public void Edgeinputouputformat() {
+	// TODO Auto-generated method stub
+	
+}
 
 }

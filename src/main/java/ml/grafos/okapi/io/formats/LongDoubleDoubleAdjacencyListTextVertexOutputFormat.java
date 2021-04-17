@@ -21,6 +21,12 @@ import org.apache.hadoop.io.LongWritable;
 
 public class LongDoubleDoubleAdjacencyListTextVertexOutputFormat extends
     AdjacencyListTextVertexOutputFormat<LongWritable, DoubleWritable, 
-    DoubleWritable> {
+    DoubleWritable>  implements TextFormatForEdgeInputOutput{
+
+	@Override
+	public void Edgeinputouputformat() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
