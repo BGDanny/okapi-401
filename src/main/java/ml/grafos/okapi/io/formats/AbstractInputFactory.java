@@ -1,12 +1,13 @@
 package ml.grafos.okapi.io.formats;
 
+
 public abstract class AbstractInputFactory {
-    public abstract TextFormatForEdgeInput getInputEdgeFormat(String TextEdgeInputFormatType);
+    public abstract TextFormatForEdgeInputOutput getInputEdgeFormat(String TextEdgeInputFormatType);
 }
 
 class IntFactory extends AbstractInputFactory{
 	@Override
-	public TextFormatForEdgeInput getInputEdgeFormat(String type)
+	public TextFormatForEdgeInputOutput getInputEdgeFormat(String type)
 	{
 		if(type.equalsIgnoreCase("intDouble")) {
 			  return new IntDoubleTextEdgeInputFormat(); 
@@ -20,7 +21,7 @@ class IntFactory extends AbstractInputFactory{
 
 class LongFactory extends AbstractInputFactory{
 	@Override
-	public TextFormatForEdgeInput getInputEdgeFormat(String type)
+	public TextFormatForEdgeInputOutput getInputEdgeFormat(String type)
 	{
 		if(type.equalsIgnoreCase("LongFloat ")) {
 			return new LongFloatTextEdgeInputFormat();

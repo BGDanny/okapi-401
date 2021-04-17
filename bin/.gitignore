@@ -4,11 +4,4 @@ target
 .idea
 .project
 graphlib.iml
-/.DS_Store
-/.gitignore
-/CHANGES.md
-/LICENSE.txt
-/README.md
-/license-header.txt
-/pom.xml
 /src/

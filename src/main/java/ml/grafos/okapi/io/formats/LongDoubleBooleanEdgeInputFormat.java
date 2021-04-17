@@ -28,56 +28,52 @@ import org.apache.hadoop.mapreduce.InputSplit;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 
 /**
- * Simple text-based {@link org.apache.giraph.io.EdgeInputFormat} for
- * weighted graphs with long IDs edges with double-boolean pair values.
- * The boolean value of each edge is false by default.
+ * Simple text-based {@link org.apache.giraph.io.EdgeInputFormat} for weighted
+ * graphs with long IDs edges with double-boolean pair values. The boolean value
+ * of each edge is false by default.
  *
- * Each line consists of: <source id> <target id> <edge weight> 
+ * Each line consists of: <source id> <target id> <edge weight>
  */
-public class LongDoubleBooleanEdgeInputFormat extends
-    TextEdgeInputFormat<LongWritable, DoubleBooleanPair>  implements TextFormatForEdgeInput{
+public class LongDoubleBooleanEdgeInputFormat extends TextEdgeInputFormat<LongWritable, DoubleBooleanPair>
+		implements TextFormatForEdgeInputOutput {
 
-  private static final Pattern SEPARATOR = Pattern.compile("[\t ]");
+	private static final Pattern SEPARATOR = Pattern.compile("[\t ]");
 
-  @Override
-  public EdgeReader<LongWritable, DoubleBooleanPair> createEdgeReader(
-      InputSplit split, TaskAttemptContext context) throws IOException {
-    return new LongLongDoubleBooleanTextEdgeReader();
-  }
+	@Override
+	public EdgeReader<LongWritable, DoubleBooleanPair> createEdgeReader(InputSplit split, TaskAttemptContext context)
+			throws IOException {
+		return new LongLongDoubleBooleanTextEdgeReader();
+	}
 
-  /**
-   * {@link org.apache.giraph.io.EdgeReader} associated with
-   * {@link LongLongDoubleTextEdgeInputFormat}.
-   */
-  public class LongLongDoubleBooleanTextEdgeReader extends
-      TextEdgeReaderFromEachLineProcessed<String[]> {
-    @Override
-    protected String[] preprocessLine(Text line) throws IOException {
-      return SEPARATOR.split(line.toString());
-    }
+	/**
+	 * {@link org.apache.giraph.io.EdgeReader} associated with
+	 * {@link LongLongDoubleTextEdgeInputFormat}.
+	 */
+	public class LongLongDoubleBooleanTextEdgeReader extends TextEdgeReaderFromEachLineProcessed<String[]> {
+		@Override
+		protected String[] preprocessLine(Text line) throws IOException {
+			return SEPARATOR.split(line.toString());
+		}
 
-    @Override
-    protected LongWritable getSourceVertexId(String[] tokens)
-      throws IOException {
-      return new LongWritable(Long.parseLong(tokens[0]));
-    }
+		@Override
+		protected LongWritable getSourceVertexId(String[] tokens) throws IOException {
+			return new LongWritable(Long.parseLong(tokens[0]));
+		}
 
-    @Override
-    protected LongWritable getTargetVertexId(String[] tokens)
-      throws IOException {
-      return new LongWritable(Long.parseLong(tokens[1]));
-    }
+		@Override
+		protected LongWritable getTargetVertexId(String[] tokens) throws IOException {
+			return new LongWritable(Long.parseLong(tokens[1]));
+		}
 
-    @Override
-    protected DoubleBooleanPair getValue(String[] tokens)
-      throws IOException {
-      return new DoubleBooleanPair(Double.parseDouble(tokens[2]), false);
-    }
-  }
+		@Override
+		protected DoubleBooleanPair getValue(String[] tokens) throws IOException {
+			return new DoubleBooleanPair(Double.parseDouble(tokens[2]), false);
+		}
+	}
 
-
-	public void Edgeinputformat() {
+	@Override
+	public void Edgeinputouputformat() {
 		// TODO Auto-generated method stub
-	
+
 	}
 }

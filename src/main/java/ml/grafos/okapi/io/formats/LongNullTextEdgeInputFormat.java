@@ -33,7 +33,7 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
  * Each line consists of: <src id> <target id>
  */
 public class LongNullTextEdgeInputFormat extends
-    TextEdgeInputFormat<LongWritable, NullWritable>  implements TextFormatForEdgeInput {
+    TextEdgeInputFormat<LongWritable, NullWritable>  implements TextFormatForEdgeInputOutput {
   /** Splitter for endpoints */
   private static final Pattern SEPARATOR = Pattern.compile("[\t ]");
 
@@ -129,7 +129,7 @@ public class LongNullTextEdgeInputFormat extends
   }
 
 @Override
-public void Edgeinputformat() {
+public void Edgeinputouputformat() {
 	// TODO Auto-generated method stub
 	
 }
