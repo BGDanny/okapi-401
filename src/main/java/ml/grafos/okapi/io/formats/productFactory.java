@@ -1,6 +1,6 @@
 package ml.grafos.okapi.io.formats;
 
-public class productFactory extends AbstractFactory {
+public class productFactory extends AbstractInputFactory {
 	@Override
 	public TextFormatForEdgeInput getInputEdgeFormat(String TextEdgeInputFormatType) {
 
